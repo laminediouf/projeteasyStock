@@ -1,0 +1,172 @@
+/* CSS Document */
+/*Menu deroulante   */
+body
+{
+ background-image:url(fnd.jpg);
+ background-size:100%;
+}
+#menu_deroulant
+{
+	position:absolute;
+	float:right;
+	left:50px;
+	top:50px;
+}
+#menu-accordeon {
+  padding:0px;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 160px;
+}
+#menu-accordeon ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#menu-accordeon li {
+   background-color:#36F; 
+   background-image:-moz-linear-gradient(#444, #111);
+   background-image: webkit-gradient(linear, left bottom, left to, color-stop(0,#111),color-stop(1,#444));
+   background-image:-webkit-linear-gradient(#444, #111);
+   background-image:-o-linear-gradient(#444, #111);
+   background-image:-ms-linear-gradient(#444, #111);
+   background-image:linear-gradient(#444, #111);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #333A40;
+}
+#menu-accordeon li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444;
+   box-shadow: none;
+   border:none;
+   margin:0;
+}
+#menu-accordeon a{
+  display:block;
+  text-decoration: none;
+  color:#FFFFFF;
+  padding: 8px 0;
+  font-family:"Minion Pro";
+  font-size:1.4em;
+}
+#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+  font-size:1.2em
+}
+#menu-accordeon li:hover {
+   background: #00F;
+}
+#menu-accordeon li li:hover {
+   background: #09F;
+}
+#menu-accordeon ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#menu-accordeon li:hover li {
+  max-height: 15em;
+}
+/* Designe Pour Tableau */
+table
+{
+position:absolute;
+border-spacing:0;
+width:500px;
+top:500px;
+left:400px;
+text-align:center;
+font-size:16px;
+font-family:"Times New Roman", Times, serif;
+color:#FFFFFF;
+}
+/* .bordered permet d'appliquer les coin arrondi des tableaux */
+.bordered
+{
+border:solid #ccc 1px;
+-moz-border-radius:20px;
+-webkit-border-radius:20px;
+border-radius:20px;
+-webkit-box-shadow:0 3px 3px #ccc;
+-moz-box-shadow:0 3px 3px #ccc;
+box-shadow:0 3px 3px #ccc;
+}
+/* Toute les cellules du Tableau th et td  son encadrer en gauche et en Haut */
+.bordered td, .bordered th
+{
+border-left:1px solid #ccc;
+border-top:1px solid #ccc;
+padding: 10px;
+text-align:left;
+}
+/* les cellules d'entete de la premier ligne ont un degrader en arriére plan et une ombre comme le texte*/
+.bordered th
+{
+background-color:#000000;
+background-image:-webkit-gradient(linear, left top,left bottom,from(#ebf3fc),to(#dce9f9);
+background-image:-webkit-linear-gradient(top,#ebf3fc,#dce9f9);
+background-image:-moz-linear-gradient(top,#ebf3fc,#dce9f9);
+background-image:-ms-linear-gradient(top,#ebf3fc,#dce9f9);
+background-image:-o-linear-gradient(top,#ebf3fc,#dce9f9);
+background-image:linear-gradient(top,#ebf3fc,#dce9f9);
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.8)inset;
+-moz-box-shadow:0 1px 0 rgba(255,255,255,.8)inset;
+box-shadow:0 1px 0 rgba(255,255,255,.8)inset;
+border-top:none;
+text-shadow:0 1px 0 rgba(255,255,255,.5);
+}
+/* la 1er ligne du tableau ne doit pos avoir  de bordur pour la 1er cellule du tableau*/
+.bordered td:first-child, .bordered th:first-child
+{
+border-left:none;
+}
+/* on maintient arrondi les 1er et dernier ligne en utilisant les pseudo-classes:
+first-child et last-child sur les cellule d'entet th sur les ligne tr et les cellule td*/
+.bordered th:first-child
+{-moz-border-radius:20px 0 0 0;
+-webkit-border-radius:20px 0 0 0;
+border-radius:20px 0 0 0;
+}
+.bordered th:last-child
+{-moz-border-radius:0 20px 0 0;
+-webkit-border-radius:0 20px 0 0;
+border-radius:0 20px 0 0;
+}
+.bordered tr:last-child td:last-child
+{-moz-border-radius:0 0 0 20px;
+-webkit-border-radius:0 0 0 20px;
+border-radius:0 0 0 20px;
+}
+.bordered tr:last-child td:last-child
+{-moz-border-radius:0 0 20px 0;
+-webkit-border-radius:0 0 20px 0;
+border-radius:0 0 20px 0;
+}
+/* les couleur d'arriere plan change au survol des ligne*/
+.bordered tr:hover
+{background:#fbf8e9;
+}
+/*Creer un ombre sur la page*/
+body:before
+{/*contenu vide mais pour le navigateur il ya un elemt */
+content:"";
+/*Positionnement: ce contenu est positionné en position fixe pour ne pas etre  deplace avec l'utilisation  */
+position:fixed;
+z-index:100;
+top:-10px;
+left:-10px;
+/*largeur et hauteur: la largeur est plus grande que la page et la hauteur est de 10px*/
+width:110%;
+height:10px;
+/* Ombre: elle est place en 0px horizontal et vertical la taille du flou est de 10px et la couleur est noir*/
+-webkit-box-shadow:0px 0px 10px rgba(0,0,0,.8);
+-moz-box-shadow:0px 0px 10px rgba(0,0,0,.8);
+-na-box-shadow:0px 0px 10px rgba(0,0,0,.8);
+-o-box-shadow:0px 0px 10px rgba(0,0,0,.8);
+box-shadow:0px 0px 10px rgba(0,0,0,.8);
+}
